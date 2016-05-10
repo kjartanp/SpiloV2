@@ -16,7 +16,7 @@
     };
 
     var packageNames = [
-      '@angular/common',
+      '@angular/common', 
       '@angular/compiler',
       '@angular/core',
       '@angular/http',
