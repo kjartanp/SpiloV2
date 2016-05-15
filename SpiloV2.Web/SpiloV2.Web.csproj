@@ -17,31 +17,20 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
-    <TypeScriptSourceMap>true</TypeScriptSourceMap>
-    <TypeScriptTarget>ES5</TypeScriptTarget>
-    <TypeScriptJSXEmit>
-    </TypeScriptJSXEmit>
-    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
-    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
-    <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
-    <TypeScriptOutFile />
-    <TypeScriptOutDir />
-    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
-    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
-    <TypeScriptAdditionalFlags>
-      $(TypeScriptAdditionalFlags) --emitDecoratorMetadata
-      --experimentalDecorators
-    </TypeScriptAdditionalFlags>
-    <TypeScriptMapRoot />
-    <TypeScriptSourceRoot />
-    <TypeScriptExperimentalDecorators>True</TypeScriptExperimentalDecorators>
-    <TypeScriptEmitDecoratorMetadata>True</TypeScriptEmitDecoratorMetadata>
   </PropertyGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.component.css" />
+    <Content Include="app\dashboard.component.css" />
+    <Content Include="app\dashboard.component.html" />
+    <Content Include="app\groups.component.css" />
+    <Content Include="app\groups.component.html" />
+    <Content Include="app\hero-detail.component.css" />
+    <Content Include="app\hero-detail.component.html" />
+    <Content Include="app\heroes.component.css" />
+    <Content Include="app\heroes.component.html" />
     <Content Include="index.html" />
     <Content Include="styles.css" />
     <Content Include="systemjs.config.js" />
@@ -55,7 +44,17 @@
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\dashboard.component.ts" />
+    <TypeScriptCompile Include="app\group.service.ts" />
+    <TypeScriptCompile Include="app\group.ts" />
+    <TypeScriptCompile Include="app\groups.component.ts" />
+    <TypeScriptCompile Include="app\mock-groups.ts" />
+    <TypeScriptCompile Include="app\hero-detail.component.ts" />
+    <TypeScriptCompile Include="app\hero.service.ts" />
+    <TypeScriptCompile Include="app\hero.ts" />
+    <TypeScriptCompile Include="app\heroes.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\mock-heroes.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
@@ -84,52 +83,23 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
-    <TypeScriptSourceMap>true</TypeScriptSourceMap>
-    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
-    <TypeScriptSourceMap>true</TypeScriptSourceMap>
-    <TypeScriptTarget>Unknown</TypeScriptTarget>
-    <TypeScriptJSXEmit>-1</TypeScriptJSXEmit>
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
     <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
-    <TypeScriptModuleKind>
-    </TypeScriptModuleKind>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
     <TypeScriptOutFile />
     <TypeScriptOutDir />
     <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
-    <TypeScriptNoEmitOnError>False</TypeScriptNoEmitOnError>
-    <TypeScriptAdditionalFlags>
-      $(TypeScriptAdditionalFlags) --emitDecoratorMetadata
-      --experimentalDecorators
-    </TypeScriptAdditionalFlags>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
     <TypeScriptMapRoot />
     <TypeScriptSourceRoot />
     <TypeScriptExperimentalDecorators>True</TypeScriptExperimentalDecorators>
     <TypeScriptEmitDecoratorMetadata>True</TypeScriptEmitDecoratorMetadata>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
-    <TypeScriptSourceMap>false</TypeScriptSourceMap>
-    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
-    <TypeScriptSourceMap>true</TypeScriptSourceMap>
-    <TypeScriptTarget>ES5</TypeScriptTarget>
-    <TypeScriptJSXEmit>
-    </TypeScriptJSXEmit>
-    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
-    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
-    <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
-    <TypeScriptOutFile />
-    <TypeScriptOutDir />
-    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
-    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
-    <TypeScriptAdditionalFlags>
-      $(TypeScriptAdditionalFlags) --emitDecoratorMetadata
-      --experimentalDecorators
-    </TypeScriptAdditionalFlags>
-    <TypeScriptMapRoot />
-    <TypeScriptSourceRoot />
-    <TypeScriptExperimentalDecorators>True</TypeScriptExperimentalDecorators>
-    <TypeScriptEmitDecoratorMetadata>True</TypeScriptEmitDecoratorMetadata>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 </Project>
