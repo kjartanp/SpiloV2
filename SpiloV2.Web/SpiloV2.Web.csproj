@@ -23,14 +23,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.component.css" />
-    <Content Include="app\dashboard.component.css" />
-    <Content Include="app\dashboard.component.html" />
-    <Content Include="app\groups.component.css" />
-    <Content Include="app\groups.component.html" />
-    <Content Include="app\hero-detail.component.css" />
-    <Content Include="app\hero-detail.component.html" />
-    <Content Include="app\heroes.component.css" />
-    <Content Include="app\heroes.component.html" />
+    <Content Include="app\app.component.html" />
+    <Content Include="app\dashboard\dashboard.component.css" />
+    <Content Include="app\dashboard\dashboard.component.html" />
+    <Content Include="app\gametypes\gametypes.component.html" />
+    <Content Include="app\groups\groups.component.css" />
+    <Content Include="app\groups\groups.component.html" />
+    <Content Include="app\heros\hero-detail.component.css" />
+    <Content Include="app\heros\hero-detail.component.html" />
+    <Content Include="app\heros\heroes.component.css" />
+    <Content Include="app\heros\heroes.component.html" />
     <Content Include="index.html" />
     <Content Include="styles.css" />
     <Content Include="systemjs.config.js" />
@@ -44,17 +46,21 @@
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
-    <TypeScriptCompile Include="app\dashboard.component.ts" />
-    <TypeScriptCompile Include="app\group.service.ts" />
-    <TypeScriptCompile Include="app\group.ts" />
-    <TypeScriptCompile Include="app\groups.component.ts" />
-    <TypeScriptCompile Include="app\mock-groups.ts" />
-    <TypeScriptCompile Include="app\hero-detail.component.ts" />
-    <TypeScriptCompile Include="app\hero.service.ts" />
-    <TypeScriptCompile Include="app\hero.ts" />
-    <TypeScriptCompile Include="app\heroes.component.ts" />
+    <TypeScriptCompile Include="app\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="app\gametypes\gametype.service.ts" />
+    <TypeScriptCompile Include="app\gametypes\gametype.ts" />
+    <TypeScriptCompile Include="app\gametypes\gametypes.component.ts" />
+    <TypeScriptCompile Include="app\gametypes\mock-gametypes.ts" />
+    <TypeScriptCompile Include="app\groups\group.service.ts" />
+    <TypeScriptCompile Include="app\groups\group.ts" />
+    <TypeScriptCompile Include="app\groups\groups.component.ts" />
+    <TypeScriptCompile Include="app\groups\mock-groups.ts" />
+    <TypeScriptCompile Include="app\heros\hero-detail.component.ts" />
+    <TypeScriptCompile Include="app\heros\hero.service.ts" />
+    <TypeScriptCompile Include="app\heros\hero.ts" />
+    <TypeScriptCompile Include="app\heros\heroes.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
-    <TypeScriptCompile Include="app\mock-heroes.ts" />
+    <TypeScriptCompile Include="app\heros\mock-heroes.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

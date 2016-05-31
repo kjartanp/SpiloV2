@@ -1,4 +1,5 @@
-﻿import { Group } from './group';
+﻿/// <reference path="../gametypes/mock-gametypes.ts" />
+import { Group } from './group';
 
 export var GROUPS: Group[] = [
 	{
@@ -6,20 +7,20 @@ export var GROUPS: Group[] = [
 		"name": "Spilo",
 		"owner": "Gunnar Gunnarsson",
 		"lastPlayedGame": new Date(),
-		"gameCount": 3
+		"gameCount": 100
 	},
 	{
 		"id": 2,
 		"name": "Familien",
-		"owner": "Gunnar Gunnarsson",
+		"owner": "Kjartan Palsson",
 		"lastPlayedGame": new Date(),
-		"gameCount": 3
+		"gameCount": 324
 	},
 	{
 		"id": 3,
 		"name": "Kjartansson",
-		"owner": "Gunnar Gunnarsson",
+		"owner": "Laufey Bjorg Sigurdardottir",
 		"lastPlayedGame": new Date(),
-		"gameCount": 3
+		"gameCount": 5
 	}
 ];

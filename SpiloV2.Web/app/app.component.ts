@@ -1,38 +1,33 @@
 ﻿import { Component } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
-import { HeroService } from './hero.service';
-import { GroupService } from './group.service';
-import { DashboardComponent } from './dashboard.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { GroupsComponent } from './groups.component';
+import { HeroService } from './heros/hero.service';
+import { GroupService } from './groups/group.service';
+import { GametypeService } from './gametypes/gametype.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroesComponent } from './heros/heroes.component';
+import { HeroDetailComponent } from './heros/hero-detail.component';
+import { GroupsComponent } from './groups/groups.component';
+import { GametypesComponent } from './gametypes/gametypes.component';
 
 @Component({
 	selector: 'my-app',
-	template: `
-    <h1>{{title}}</h1>
-    <nav>
-      <a [routerLink]="['Dashboard']">Dashboard</a>
-      <a [routerLink]="['Heroes']">Heroes</a>
-	  <a [routerLink]="['Groups']">Groups</a>
-    </nav>
-    <router-outlet></router-outlet>
-  `,
+	templateUrl: 'app/app.component.html',
 	styleUrls: ['app/app.component.css'],
 	directives: [ROUTER_DIRECTIVES],
 	providers: [
 		ROUTER_PROVIDERS,
 		HeroService,
-		GroupService
+		GroupService,
+		GametypeService
 	]
 })
 @RouteConfig([
 	{
 		path: '/dashboard',
 		name: 'Dashboard',
-		component: DashboardComponent,
-		useAsDefault: true
+		component: DashboardComponent
+		
 	},
 	{
 		path: '/detail/:id',
@@ -45,9 +40,15 @@ import { GroupsComponent } from './groups.component';
 		component: HeroesComponent
 	},
 	{
-		path: '/groups',
+		path: '',
 		name: 'Groups',
-		component: GroupsComponent
+		component: GroupsComponent,
+		useAsDefault: true
+	},
+	{
+		path: '/gametypes/:id',
+		name: 'Gametypes',
+		component: GametypesComponent
 	}
 ])
 export class AppComponent {

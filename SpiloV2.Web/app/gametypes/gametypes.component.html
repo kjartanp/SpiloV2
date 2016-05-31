@@ -1,0 +1,15 @@
+﻿<div *ngFor="let gametype of gametypes" class="row">
+    <div class="col-xs-6 ">
+        <span class="badge">{{gametype.playdGames}}</span>
+    </div>
+    <div class="col-xs-6">
+        {{gametype.name}}
+    </div>
+    <div class="col-xs-6 ">
+        {{gametype.lastPlayedGame | date}}
+    </div>
+    <div class="col-xs-6 ">
+        {{gametype.difficulty}}
+    </div>
+</div>
+<button (click)="goBack()">Back</button>

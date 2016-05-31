@@ -6,12 +6,11 @@ import { GroupService } from './group.service';
 
 @Component({
 	selector: 'my-groups',
-	templateUrl: 'app/groups.component.html',
-	styleUrls: ['app/groups.component.css']
+	templateUrl: 'app/groups/groups.component.html',
+	styleUrls: ['app/groups/groups.component.css']
 })
 export class GroupsComponent implements OnInit {
 	groups: Group[];
-	selectedHero: Group;
 
 	constructor(
 		private router: Router,
@@ -25,4 +24,8 @@ export class GroupsComponent implements OnInit {
 		this.getGroups();
 	}
 
+	gotoDetail(group: Group) {
+		let link = ['Gametypes', { id: group.id }];
+		this.router.navigate(link);
+	}
 }

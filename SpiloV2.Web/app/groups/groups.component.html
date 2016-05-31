@@ -1,0 +1,14 @@
+﻿<div *ngFor="let group of groups"  class="row">
+    <div class="col-xs-6 ">
+        <span class="badge">{{group.gameCount}}</span>
+    </div>
+    <div class="col-xs-6">
+        {{group.name}}
+    </div>
+    <div class="col-xs-6 ">
+        {{group.lastPlayedGame | date}}
+    </div>
+    <div class="col-xs-6 ">
+        <button (click)="gotoDetail(group)">{{group.owner}}</button>
+    </div>
+</div>
