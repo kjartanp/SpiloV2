@@ -1,10 +1,11 @@
-﻿<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
     <base href="/">
     <title>Point tracker</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
     <link rel="stylesheet" href="styles.css">
     <!-- 1. Load libraries -->
@@ -17,12 +18,56 @@
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
     <script>
-        System.import('app').catch(function(err) { console.error(err); });
+        System.import('app').catch(function (err) { console.error(err); });
     </script>
+    <script src="https://cdn.auth0.com/w2/auth0-widget-5.2.min.js"></script>
+    <script type="text/javascript">
+
+        var widget = new Auth0Widget({
+            domain: 'spiloauth.auth0.com',
+            clientID: '2wvcUnw455cuUgWp8rsLuG3nzcjAt9tu',
+            callbackURL: 'http://spilo.azurewebsites.net/LoginCallback.ashx',
+        });
+
+    </script>
+
 </head>
 
 <!-- 3. Display the application -->
 <body>
-    <my-app>Loading...</my-app>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Spiló</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a onclick="widget.signin({ scope: 'openid profile' })">Login</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <br /><br />
+        <my-app>Loading...</my-app>
+
+        <hr />
+        <footer>
+            <p>&copy; 2016- Spiló</p>
+        </footer>
+    </div>
+
 </body>
 </html>

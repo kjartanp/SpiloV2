@@ -7,12 +7,14 @@ using System.Linq;
 
 namespace Spilo.BusinessLayer
 {
+	public interface IGroupService
+	{
+		List<GroupContract> RetrieveAllGroups();
+	}
 	public class GroupService : IGroupService
 	{
 		SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Spilo"].ToString());
-		public List<GroupContract> RetrieveAllGroups()
-		{
-			var sql = @"select	Id as GroupId, 
+		private const string RetrieveGroupSql = @"select	Id as GroupId, 
 		Name as GroupName, 
 		RegisteredBy as Owner, 
 		b.gameCount as GameCount, 
@@ -25,8 +27,15 @@ namespace Spilo.BusinessLayer
 			   from GameTypes
 		   group by GroupId ) b on a.Id = b.GroupId";
 
-			var groups = con.Query<GroupContract>(sql);
+		public List<GroupContract> RetrieveAllGroups()
+		{
+			var groups = con.Query<GroupContract>(RetrieveGroupSql);
 			return groups.ToList();
+		}
+
+		public void CreateNewGroup(GroupContract newGroup)
+		{
+			
 		}
 	}
 
@@ -39,8 +48,5 @@ namespace Spilo.BusinessLayer
 		public int GameCount { get; set; }
 	}
 
-	public interface IGroupService
-	{
-		List<GroupContract> RetrieveAllGroups();
-	}
+
 }
